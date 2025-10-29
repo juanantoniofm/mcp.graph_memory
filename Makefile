@@ -20,8 +20,8 @@ docker.cyphergui:
 	cp Dockerfile.cyphergui docker.cyphergui/Dockerfile
 
 up: ##@Docker Bring up the service
+	cd docker.neo4j && make neo4j .secrets/neo4j_auth_file
 	docker compose up -d
-	cd docker.neo4j && make up
 
 build: docker.cyphergui ##@Docker Build the service
 	docker compose build

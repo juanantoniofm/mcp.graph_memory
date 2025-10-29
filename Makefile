@@ -15,11 +15,15 @@ help: ##@Helper Display all commands and descriptions
 		} \
 	}' $(MAKEFILE_LIST)
 
+docker.cyphergui:
+	git clone https://github.com/stefanak-michal/cyphergui.git docker.cyphergui
+	cp Dockerfile.cyphergui docker.cyphergui/Dockerfile
+
 up: ##@Docker Bring up the service
 	docker compose up -d
 	cd docker.neo4j && make up
 
-build: ##@Docker Build the service
+build: docker.cyphergui ##@Docker Build the service
 	docker compose build
 
 down: ##@Docker Bring all of it down

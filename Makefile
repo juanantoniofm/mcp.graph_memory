@@ -17,7 +17,10 @@ help: ##@Helper Display all commands and descriptions
 
 up: ##@Docker Bring up the service
 	docker compose up -d
-	#cd docker.neo4j && make up
+	cd docker.neo4j && make up
+
+build: ##@Docker Build the service
+	docker compose build
 
 down: ##@Docker Bring all of it down
 	docker compose down -v

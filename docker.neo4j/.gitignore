@@ -1,0 +1,6 @@
+# State
+neo4j/logs/
+neo4j/data/
+
+# Sensitive
+.secrets

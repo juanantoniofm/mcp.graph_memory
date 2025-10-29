@@ -30,3 +30,10 @@ claude mcp add --transport http neo4j http://localhost:8010/mcp/ \
   -e NEO4J_PASSWORD="your_password"
 ```
 
+## An easy way out
+
+If you face issues with the above, you can use the memory-only MCP instead:
+
+```bash
+claude  mcp add memory docker run -i -v claude-memory:/app/dist --rm mcp/memory 
+```
